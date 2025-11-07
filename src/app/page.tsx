@@ -7,24 +7,32 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
       {/* Navbar */}
       <Navbar />
 
-      {/* Background Photo with Overlay */}
-      <div className="absolute top-0 left-0 h-full w-full">
-        <Image
-          src="/my-photo.jpg"
-          alt="Kosala Lakshan"
-          fill
-          style={{ objectFit: "cover" }}
-          className="opacity-55"
-        />
-        <div className="absolute top-0 left-0 h-full w-full bg-black/50" /> {/* overlay */}
-      </div>
+      {/* Decorative gradient circles (background effect) */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-32 relative z-10">
+        {/* Circular Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="w-40 h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/30"
+        >
+          <Image
+            src="/my-photo.jpg" // 👈 Make sure your photo is in /public/my-photo.jpg
+            alt="Kosala Lakshan"
+            width={200}
+            height={200}
+            className="object-cover w-full h-full"
+          />
+        </motion.div>
+
         <motion.h1
           className="text-5xl md:text-7xl font-bold text-cyan-400 mb-4"
           initial={{ opacity: 0, y: 40 }}
@@ -53,7 +61,7 @@ export default function Home() {
           creativity and technology. Currently focusing on{" "}
           <span className="text-cyan-400">multimedia technology</span> and learning
           modern frameworks like <span className="text-cyan-400">3D modeling, animation</span> and at the same time{" "}
-          <span className="text-cyan-400"> Spring Boot and Next.js.</span>.
+          <span className="text-cyan-400">Spring Boot and Next.js</span>.
         </motion.p>
 
         <motion.a
