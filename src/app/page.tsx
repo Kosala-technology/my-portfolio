@@ -25,7 +25,7 @@ export default function Home() {
           className="w-40 h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/30"
         >
           <Image
-            src="/my-photo.jpg" // 👈 Make sure your photo is in /public/my-photo.jpg
+            src="/kosala.png" // 👈 Make sure your photo is in /public/my-photo.jpg
             alt="Kosala Lakshan"
             width={200}
             height={200}
@@ -48,7 +48,7 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          ICT Undergraduate | Multimedia Enthusiast | Future Developer
+          ICT Undergraduate | Multimedia Enthusiast | Future Developer And Designer
         </motion.h2>
 
         <motion.p
@@ -61,7 +61,7 @@ export default function Home() {
           creativity and technology. Currently focusing on{" "}
           <span className="text-cyan-400">multimedia technology</span> and learning
           modern frameworks like <span className="text-cyan-400">3D modeling, animation</span> and at the same time{" "}
-          <span className="text-cyan-400">Spring Boot and Next.js</span>.
+          <span className="text-cyan-400">Digital Marketing</span>.
         </motion.p>
 
         <motion.a
