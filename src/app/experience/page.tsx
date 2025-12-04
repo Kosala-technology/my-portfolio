@@ -62,7 +62,7 @@ export default function ExperiencePage() {
               <li>
                 <strong className="text-cyan-400">Upcoming Internship</strong> – 
                 Seeking opportunities starting from next semester in areas of Multimedia, 
-                Web Development, or Software Engineering.
+                UI/UX Designing, Graphic designing or 3D modeling.
               </li>
             </ul>
           </motion.div>

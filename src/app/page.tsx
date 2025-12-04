@@ -11,13 +11,13 @@ export default function Home() {
       {/* Navbar */}
       <Navbar />
 
-      {/* Decorative gradient circles (background effect) */}
+      
       <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
 
       {/* Hero Section */}
       <main className="flex flex-col items-center justify-center text-center px-4 pt-32 pb-32 relative z-10">
-        {/* Circular Profile Image */}
+        
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -25,7 +25,7 @@ export default function Home() {
           className="w-40 h-40 md:w-48 md:h-48 mb-6 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg shadow-cyan-500/30"
         >
           <Image
-            src="/kosala.png" // 👈 Make sure your photo is in /public/my-photo.jpg
+            src="/kosala.png" // 
             alt="Kosala Lakshan"
             width={200}
             height={200}
@@ -57,10 +57,8 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.0, duration: 1 }}
         >
-          I’m passionate about creating innovative digital experiences that combine
-          creativity and technology. Currently focusing on{" "}
-          <span className="text-cyan-400">multimedia technology</span> and learning
-          modern frameworks like <span className="text-cyan-400">3D modeling, animation</span> and at the same time{" "}
+          I’m passionate about creating innovative digital experiences by blending creativity with technology. I am currently focusing on  {" "}
+          <span className="text-cyan-400">multimedia technologies</span> while developing my skills in  <span className="text-cyan-400">Graphic designing, UI/UX designing, 3D modeling, animation</span> and at the same time{" "}
           <span className="text-cyan-400">Digital Marketing</span>.
         </motion.p>
 

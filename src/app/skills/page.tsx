@@ -3,15 +3,34 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
+import { Code, Palette, Cpu, PenTool, Layout, GitBranch } from "lucide-react";
 
-
-const skills = [
-  { name: "Multimedia Technology", level: 90 },
-  { name: "React / Next.js", level: 80 },
-  { name: "Tailwind CSS", level: 85 },
-  { name: "Spring Boot", level: 50 },
-  { name: "Java / TypeScript", level: 75 },
-  { name: "Git / GitHub", level: 80 },
+const skillCategories = [ {
+    title: "Creative Tools",
+    icon: <PenTool className="w-6 h-6 text-cyan-400" />,
+    skills: ["Blender", "After Effects", "Adobe Photoshop","Autodesk-maya","Adobe Illustrator","Premiere Pro",],
+  },
+  {
+    title: "Multimedia & Design",
+    icon: <Palette className="w-6 h-6 text-cyan-400" />,
+    skills: ["Multimedia Technology", "Graphic Design", "Video Editing", "Animation"],
+  },
+  {
+    title: "Backend Development - (Still Learning) ",
+    icon: <Cpu className="w-6 h-6 text-cyan-400" />,
+    skills: ["Spring Boot", "REST APIs", "MySQL"],
+  },
+  {
+    title: "Programming Languages",
+    icon: <Code className="w-6 h-6 text-cyan-400" />,
+    skills: ["Java","HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Frontend Development",
+    icon: <Layout className="w-6 h-6 text-cyan-400" />,
+    skills: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+  }
+ 
 ];
 
 export default function SkillsPage() {
@@ -29,28 +48,37 @@ export default function SkillsPage() {
           My Skills
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-          {skills.map((skill, index) => (
+        {/* Skill Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
+          {skillCategories.map((category, index) => (
             <motion.div
-              key={skill.name}
-              className="bg-gray-800 rounded-xl p-5 shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
+              key={category.title}
+              className="bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-700 hover:border-cyan-400 transition"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
-              <div className="w-full bg-gray-700 rounded-full h-4">
-                <div
-                  className="bg-cyan-400 h-4 rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                ></div>
+              <div className="flex items-center gap-3 mb-4">
+                {category.icon}
+                <h3 className="text-xl font-semibold">{category.title}</h3>
               </div>
-              <p className="text-right mt-1 text-gray-300">{skill.level}%</p>
+
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-cyan-500 hover:text-black transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
       </section>
+
       <ContactFooter />
     </div>
   );

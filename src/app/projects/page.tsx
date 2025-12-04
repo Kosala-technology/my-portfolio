@@ -14,13 +14,7 @@ export default function ProjectsPage() {
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
       link: "https://github.com/Kosala-technology",
     },
-    {
-      title: "Image Editor App",
-      description:
-        "A simple image editing web app with filters and cropping tools built using HTML, CSS, and JavaScript.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/Kosala-technology",
-    },
+    
   ];
 
   const groupProjects = [
