@@ -22,12 +22,12 @@ const Navbar = () => {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 text-white">
-        
+
         {/* Profile + Name Section */}
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-cyan-400">
             <Image
-              src="/avatar.jpg"
+              src="/kosala.png"
               alt="Kosala Lakshan Samararathna"
               width={40}
               height={40}

@@ -23,7 +23,7 @@ export default function AboutPage() {
         >
           <div className="w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg">
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt="Kosala Lakshan Samararathna"
               width={224}
               height={224}
