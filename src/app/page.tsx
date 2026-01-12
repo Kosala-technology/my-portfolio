@@ -63,7 +63,7 @@ export default function Home() {
         </motion.p>
 
         <motion.a
-          href="/projects"
+          href="/creations"
           className="mt-10 px-6 py-3 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-400 transition"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

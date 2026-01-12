@@ -12,25 +12,20 @@ export default function ProjectsPage() {
       description:
         "A personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion to showcase my skills and projects.",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-      link: "https://github.com/Kosala-technology",
+      link: "https://github.com/Kosala-technology/my-portfolio",
     },
     
   ];
 
   const groupProjects = [
-    {
-      title: "Multimedia Short Film Project",
-      description:
-        "A 10-minute emotional short film produced with a team of four, showcasing skills in video production, editing, and storytelling.",
-      tech: ["Premiere Pro", "After Effects"],
-      link: "https://github.com/Kosala-technology",
-    },
+    
     {
       title: "Citizen-Voice",
       description:
         "A web-based platform that allows citizens to report public issues and communicate with authorities through an easy, transparent, and secure complaint system.",
       tech: ["Next.js", "Firebase", "Tailwind CSS", "PostgreSQL"],
-      link: "https://github.com/Kosala-technology",
+      link: "https://citizen-voice-five.vercel.app/",
+      link02: "https://github.com/hashalagayendra/Citizen-Voice/tree/kosala",
     },
   ];
 
@@ -114,6 +109,14 @@ export default function ProjectsPage() {
                   className="text-cyan-400 hover:underline"
                 >
                   🔗 View Project
+                </a><br />
+                <br />
+                <a
+                  href={project.link02}
+                  target="_blank"
+                  className="text-cyan-400 hover:underline"
+                >
+                  🔗 View Github
                 </a>
               </motion.div>
             ))}
@@ -128,10 +131,10 @@ export default function ProjectsPage() {
           className="text-center mt-12"
         >
           <h3 className="text-3xl font-semibold text-cyan-300 mb-4">
-            🎨 My Creations
+            🎨 UI/UX Design, Graphic Design, 3D modeling
           </h3>
           <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-            Explore my creative side — animations, motion graphics, and 3D
+            Explore my creative side — UI/UX Design, Graphic Design, and 3D
             modeling work that showcase my multimedia skills.
           </p>
 
@@ -141,7 +144,7 @@ export default function ProjectsPage() {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            🎬 View My Creations
+            🎬 View My projects
           </motion.a>
         </motion.div>
       </section>
