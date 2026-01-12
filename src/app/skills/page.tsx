@@ -8,12 +8,12 @@ import { Code, Palette, Cpu, PenTool, Layout, GitBranch } from "lucide-react";
 const skillCategories = [ {
     title: "Creative Tools",
     icon: <PenTool className="w-6 h-6 text-cyan-400" />,
-    skills: ["Blender", "After Effects", "Adobe Photoshop","Autodesk-maya","Adobe Illustrator","Premiere Pro",],
+    skills: ["Figma", "Adobe Photoshop", "Adobe Illustrator", "After Effects", "Blender","Autodesk-maya", "Premiere Pro",],
   },
   {
     title: "Multimedia & Design",
     icon: <Palette className="w-6 h-6 text-cyan-400" />,
-    skills: ["Multimedia Technology", "Graphic Design", "Video Editing", "Animation"],
+    skills: ["UI / UX Design", "Graphic Design", "Video Editing", "Animation"],
   },
   {
     title: "Backend Development - (Still Learning) ",

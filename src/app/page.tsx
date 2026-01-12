@@ -68,7 +68,7 @@ export default function Home() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          View My Work
+          View My UI/UX, Graphic & 3D Models Designs
         </motion.a>
       </main>
 
