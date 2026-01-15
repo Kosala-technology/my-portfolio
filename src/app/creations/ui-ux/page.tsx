@@ -11,7 +11,10 @@ const uiuxCreations = [
     description:
       "A complete mobile UI/UX case study including user flows, wireframes, and high-fidelity designs.",
     image: "/creations/uiux/behance-cover.jpg",
-    behanceLink: "https://www.behance.net/gallery/242203731/Food-Ordering-App-UIUX-Case-Study",
+    behanceLink:
+      "https://www.behance.net/gallery/242203731/Food-Ordering-App-UIUX-Case-Study",
+    figmaLink:
+      "https://www.figma.com/design/YZZrBEq6cjBFagEjdl4U7l/food-ordering-app?node-id=0-1&m=dev&t=NaBVeUnjhlN56JsF-1",
   },
 ];
 
@@ -31,13 +34,10 @@ export default function UIUXPage() {
 
         <div className="grid md:grid-cols-2 gap-10">
           {uiuxCreations.map((item, index) => (
-            <motion.a
+            <motion.div
               key={index}
-              href={item.behanceLink}
-              target="_blank"
-              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
-              className="bg-gray-800 rounded-xl overflow-hidden shadow-xl cursor-pointer group"
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-xl"
             >
               {/* Cover Image */}
               <div className="relative w-full h-56">
@@ -45,7 +45,7 @@ export default function UIUXPage() {
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:opacity-90 transition"
+                  className="object-cover"
                 />
               </div>
 
@@ -54,15 +54,33 @@ export default function UIUXPage() {
                 <h3 className="text-2xl font-semibold mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-300 mb-4">
+
+                <p className="text-gray-300 mb-6">
                   {item.description}
                 </p>
 
-                <span className="inline-block text-cyan-400 font-medium">
-                  View on Behance →
-                </span>
+                {/* Action Buttons */}
+                <div className="flex gap-4 flex-wrap">
+                  <a
+                    href={item.behanceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-medium transition"
+                  >
+                    View on Behance 👉
+                  </a>
+
+                  <a
+                    href={item.figmaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-2 rounded-lg border border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-gray-900 font-medium transition"
+                  >
+                    View on Figma Project 👉
+                  </a>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </main>
