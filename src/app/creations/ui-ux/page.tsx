@@ -1,157 +1,73 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import ContactFooter from "@/components/ContactFooter";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-const uiuxWorks = [
+const uiuxCreations = [
   {
-    title: "Food Ordering App UI",
-    description: "Modern mobile UI design for a food ordering application.",
-    images: [
-      "/creations/uiux/food-1.jpg",
-      "/creations/uiux/food-2.jpg",
-      "/creations/uiux/food-3.jpg",
-      "/creations/uiux/food-4.jpg",
-    ],
-  },
-  {
-    title: "Portfolio Website UI",
-    description: "Clean and minimal portfolio interface design.",
-    images: ["/creations/uiux/portfolio-ui.jpg"],
+    title: "Food Ordering App – UI/UX Design",
+    description:
+      "A complete mobile UI/UX case study including user flows, wireframes, and high-fidelity designs.",
+    image: "/creations/uiux/behance-cover.jpg",
+    behanceLink: "https://www.behance.net/gallery/242203731/Food-Ordering-App-UIUX-Case-Study",
   },
 ];
 
 export default function UIUXPage() {
-  const [viewerOpen, setViewerOpen] = useState(false);
-  const [activeImages, setActiveImages] = useState<string[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const openViewer = (images: string[], index: number) => {
-    setActiveImages(images);
-    setCurrentIndex(index);
-    setViewerOpen(true);
-  };
-
-  const closeViewer = () => setViewerOpen(false);
-
-  const next = () =>
-    setCurrentIndex((prev) => (prev + 1) % activeImages.length);
-
-  const prev = () =>
-    setCurrentIndex((prev) =>
-      prev === 0 ? activeImages.length - 1 : prev - 1
-    );
-
-  /* ✅ KEYBOARD CONTROLS */
-  useEffect(() => {
-    if (!viewerOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "Escape") closeViewer();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [viewerOpen, activeImages]);
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white flex flex-col">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
       <Navbar />
 
       <main className="flex-1 px-6 py-20 max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-cyan-400 mb-12">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-4xl font-bold text-cyan-400 mb-12 text-center"
+        >
           UI / UX Design
-        </h1>
+        </motion.h1>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {uiuxWorks.map((work, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -6 }}
-              className="bg-gray-800 rounded-2xl shadow-lg overflow-hidden"
+          {uiuxCreations.map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.behanceLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.03 }}
+              className="bg-gray-800 rounded-xl overflow-hidden shadow-xl cursor-pointer group"
             >
-              <div
-                className="relative h-64 cursor-pointer"
-                onClick={() => openViewer(work.images, 0)}
-              >
+              {/* Cover Image */}
+              <div className="relative w-full h-56">
                 <Image
-                  src={work.images[0]}
-                  alt={work.title}
+                  src={item.image}
+                  alt={item.title}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:opacity-90 transition"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition flex items-center justify-center">
-                  <span className="text-sm">
-                    Click or use arrow keys to view
-                  </span>
-                </div>
               </div>
 
+              {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold">{work.title}</h3>
-                <p className="text-gray-300 mt-2">{work.description}</p>
+                <h3 className="text-2xl font-semibold mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 mb-4">
+                  {item.description}
+                </p>
+
+                <span className="inline-block text-cyan-400 font-medium">
+                  View on Behance →
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </main>
 
       <ContactFooter />
-
-      {/* 🔍 FULLSCREEN IMAGE VIEWER */}
-      <AnimatePresence>
-        {viewerOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
-          >
-            {/* Close */}
-            <button
-              onClick={closeViewer}
-              className="absolute top-6 right-6 text-3xl"
-            >
-              ✕
-            </button>
-
-            {/* Prev */}
-            {activeImages.length > 1 && (
-              <button
-                onClick={prev}
-                className="absolute left-6 text-5xl"
-              >
-                ‹
-              </button>
-            )}
-
-            {/* Image */}
-            <div className="relative w-[90vw] h-[85vh]">
-              <Image
-                src={activeImages[currentIndex]}
-                alt="UI Preview"
-                fill
-                className="object-contain"
-              />
-            </div>
-
-            {/* Next */}
-            {activeImages.length > 1 && (
-              <button
-                onClick={next}
-                className="absolute right-6 text-5xl"
-              >
-                ›
-              </button>
-            )}
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }

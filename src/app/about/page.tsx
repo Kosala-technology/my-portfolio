@@ -49,12 +49,12 @@ export default function AboutPage() {
             <span className="text-cyan-400">Multimedia Technology</span>. <br />
             <br />
             I’m passionate about combining creativity and technology to design
-            engaging digital experiences. I’m currently learning{" "}
-            <span className="text-cyan-400">Spring Boot</span> and exploring how
-            backend technologies can enhance interactive web applications. <br />
+            engaging digital experiences.I’m currently refining my skills in {" "}
+            <span className="text-cyan-400">Graphic & Interface Design</span> while 
+            exploring how Spring Boot enhances the speed of interactive web apps. <br />
             <br />
-            I aim to build modern, user-focused applications that merge
-            functionality and aesthetics.
+            I believe that great software should be as beautiful as it is functional, 
+            merging pixel-perfect aesthetics with clean, scalable code.
           </p>
 
           {/* 🌟 Creative Download CV Button */}

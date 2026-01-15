@@ -11,7 +11,7 @@ const models = [
     image: "/creations/3d/3d1.jpg",
   },
   {
-    title: "Environment Model",
+    title: "not listed",
     description: "Low-poly environment design.",
     image: "/creations/3d/3d2.jpg",
   },

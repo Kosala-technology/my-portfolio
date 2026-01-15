@@ -6,14 +6,14 @@ import Image from "next/image";
 
 const graphics = [
   {
-    title: "Event Poster",
+    title: "not listed",
     description: "Promotional poster design for a music event.",
     image: "/creations/graphic/g1.jpg",
   },
   {
-    title: "Social Media Banner",
+    title: "not listed",
     description: "Facebook and Instagram banner design.",
-    image: "/creations/graphic/g2.jpg",
+    image: "/creations/graphic/g1.jpg",
   },
 ];
 
