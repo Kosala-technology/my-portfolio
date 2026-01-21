@@ -14,64 +14,70 @@ const uiScreens = [
     image: "/uiux/food-ordering/intro.png",
   },
   {
-    title: "Login Screen",
-    description:
-      "Simple and distraction-free login interface with clear call-to-action buttons for quick access.",
-    image: "/uiux/food-ordering/ui-02.jpg",
-  },
-  {
-    title: "Sign Up Screen",
-    description:
-      "User-friendly registration flow with minimal required inputs to reduce friction during onboarding.",
-    image: "/uiux/food-ordering/ui-03.jpg",
-  },
-  {
     title: "Home Screen",
     description:
-      "The main dashboard showing featured food items, categories, and promotions for quick discovery.",
+      "Simple and distraction-free login interface with clear call-to-action buttons for quick access.",
     image: "/uiux/food-ordering/home.png",
   },
   {
-    title: "Food Categories",
+    title: "Item Activities",
     description:
-      "Clearly separated food categories allowing users to browse meals efficiently.",
-    image: "/uiux/food-ordering/ui-05.jpg",
+      "Individual item pages highlighting food imagery with quick-select sliders for spiciness and portions.",
+    image: "/uiux/food-ordering/01.png",
   },
   {
-    title: "Product Listing",
+    title: "",
     description:
-      "Displays food items with images, prices, and ratings to help users make informed decisions.",
-    image: "/uiux/food-ordering/ui-06.jpg",
+      "",
+    image: "/uiux/food-ordering/02.png",
   },
   {
-    title: "Product Details",
+    title: "",
     description:
-      "Detailed view of selected food items including description, ingredients, and customization options.",
-    image: "/uiux/food-ordering/ui-07.jpg",
+      "",
+    image: "/uiux/food-ordering/03.png",
   },
   {
-    title: "Cart Screen",
+    title: "",
     description:
-      "Shows selected items with quantity control and total price for easy order management.",
-    image: "/uiux/food-ordering/ui-08.jpg",
+      "",
+    image: "/uiux/food-ordering/04.png",
   },
   {
-    title: "Checkout Screen",
+    title: "",
     description:
-      "A streamlined checkout experience with address selection and payment options.",
+      "Interactive 'Customize Your Burger' interface for selecting specific toppings and side options.",
+    image: "/uiux/food-ordering/05.png",
+  },
+  {
+    title: "Payment and Pop messages",
+    description:
+      "Clean breakdown of costs and delivery time with a selection of saved payment methods.",
     image: "/uiux/food-ordering/checkout.png",
   },
   {
-    title: "Order Confirmation",
+    title: "",
     description:
-      "Confirms successful order placement and provides feedback to reassure users.",
-    image: "/uiux/food-ordering/ui-10.jpg",
+      "Visual confirmation modal providing immediate feedback after a successful payment.",
+    image: "/uiux/food-ordering/pop.png",
   },
   {
-    title: "Order Tracking",
+    title: "User profile and customer support",
+    description:
+      "Centralized account settings for managing personal details, delivery addresses, and order history.",
+    image: "/uiux/food-ordering/profile.png",
+  },
+  {
+    title: "",
+    description:
+      "Confirms successful order placement and provides feedback to reassure users.",
+    image: "/uiux/food-ordering/support01.png",
+  },
+  {
+    title: "",
     description:
       "Allows users to track their order status in real time, increasing transparency and trust.",
-    image: "/uiux/food-ordering/ui-11.jpg",
+    image: "/uiux/food-ordering/support01.png",
   },
 ];
 
@@ -205,7 +211,7 @@ export default function FoodOrderingUIUXPage() {
       {/* ================= External Links ================= */}
       <section className="pb-24 flex justify-center gap-6">
         <a
-          href="https://www.figma.com/"
+          href="https://www.figma.com/proto/YZZrBEq6cjBFagEjdl4U7l/food-ordering-app?node-id=0-1&t=NaBVeUnjhlN56JsF-1"
           target="_blank"
           className="px-6 py-3 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-400 transition"
         >
@@ -213,7 +219,7 @@ export default function FoodOrderingUIUXPage() {
         </a>
 
         <a
-          href="https://www.behance.net/"
+          href="https://www.behance.net/gallery/242203731/Food-Ordering-App-UIUX-Case-Study"
           target="_blank"
           className="px-6 py-3 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition"
         >
