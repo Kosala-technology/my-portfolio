@@ -58,17 +58,17 @@ export default function Home() {
           transition={{ delay: 1.0, duration: 1 }}
         >
           I’m passionate about creating innovative digital experiences by blending creativity with technology. I am currently focusing on  {" "}
-          <span className="text-cyan-400">multimedia technologies</span> while developing my skills in  <span className="text-cyan-400">UI/UX designing, Graphic designing, 3D modeling </span> and at the same time{" "}
+          <span className="text-cyan-400">UI/UX designing</span> while developing my skills in  <span className="text-cyan-400"> Graphic designing, 3D modeling </span> and at the same time{" "}
           <span className="text-cyan-400">Digital Marketing</span>.
         </motion.p>
 
         <motion.a
-          href="/creations"
+          href="/projects"
           className="mt-10 px-6 py-3 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-400 transition"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          View My UI/UX, Graphic & 3D Models Designs
+          View Projects
         </motion.a>
       </main>
 
