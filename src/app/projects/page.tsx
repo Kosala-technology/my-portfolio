@@ -13,8 +13,9 @@ export default function ProjectsPage() {
   // Image carousel state
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [flyerImageIndex, setFlyerImageIndex] = useState(0);
   
-  // Array of images for the carousel
+  // Array of images for the UI/UX carousel
   const uiuxImages = [
     "/creations/uiux/food-ordering-cover.jpg",
     "/creations/uiux/image2.jpg",
@@ -23,7 +24,16 @@ export default function ProjectsPage() {
     "/creations/uiux/image5.jpg",
   ];
 
-  // Auto-switch images every 3 seconds
+  // Array of images for the Flyer Designs carousel
+  const flyerImages = [
+    "/flyers/flyer-01.png",
+    "/flyers/flyer-02.png",
+    "/flyers/flyer-03.png",
+    "/flyers/flyer-04.png",
+    "/flyers/flyer-05.png",
+  ];
+
+  // Auto-switch UI/UX images every 1.5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => 
@@ -33,6 +43,17 @@ export default function ProjectsPage() {
 
     return () => clearInterval(interval);
   }, [uiuxImages.length]);
+
+  // Auto-switch Flyer images every 1.5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFlyerImageIndex((prevIndex) => 
+        (prevIndex + 1) % flyerImages.length
+      );
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, [flyerImages.length]);
 
   const individualProjects = [
     {
@@ -171,9 +192,85 @@ export default function ProjectsPage() {
               </p>
 
               <Link
-                // onClick={() => router.push("/projects/uiux")}
                 href="/projects/uiux"
-                  className="inline-flex items-center gap-2 text-cyan-400 font-medium hover:underline"
+                className="inline-flex items-center gap-2 text-cyan-400 font-medium hover:underline"
+              >
+                View Project →
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* ================= Flyer Designs ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="w-full max-w-6xl mb-24"
+        >
+          <h3 className="text-3xl font-semibold text-cyan-300 mb-8">
+            ✨ Flyer Designs
+          </h3>
+
+          <motion.div
+            whileHover={{ y: -6 }}
+            className="bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-400/40 transition"
+          >
+            {/* Image Carousel */}
+            <div className="relative w-full h-72 md:h-80 overflow-hidden bg-black">
+              {flyerImages.map((img, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: flyerImageIndex === index ? 1 : 0,
+                    scale: flyerImageIndex === index ? 1 : 1.1
+                  }}
+                  transition={{ duration: 0.7 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={img}
+                    alt={`Flyer Design ${index + 1}`}
+                    fill
+                    className="object-contain"
+                    priority={index === 0}
+                  />
+                </motion.div>
+              ))}
+
+              {/* Carousel Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                {flyerImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setFlyerImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      flyerImageIndex === index
+                        ? "bg-cyan-400 w-8"
+                        : "bg-gray-400 hover:bg-gray-300"
+                    }`}
+                    aria-label={`Go to flyer ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="p-8">
+              <h4 className="text-2xl font-semibold text-cyan-400 mb-3">
+                Creative Flyer Portfolio
+              </h4>
+
+              <p className="text-gray-300 mb-6 max-w-2xl">
+                A collection of creative and impactful flyer designs for various
+                events, promotions, and businesses. Each design focuses on visual
+                hierarchy and effective communication.
+              </p>
+
+              <Link
+                href="/projects/flyers"
+                className="inline-flex items-center gap-2 text-cyan-400 font-medium hover:underline"
               >
                 View Project →
               </Link>
